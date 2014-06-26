@@ -29,21 +29,20 @@ var fastIsPrime = function (number)   {
      return true
 }
 
-
-var primeFactors = function( number ) {
-	arr = [];
-	for (var i=1; i <= number; i++) {
-		if (number % i == 0)
-			if (fastIsPrime(i))
-				arr.push(i);
-	}
-	return arr
+var primeFactors = function (number) {
+    if (fastIsPrime(number)) {
+        return [number]
+    }
+    max = parseInt(number / 2) + 1
+    for (var i = 2; i <= max; i++) {
+      if (number % i == 0) {
+        return (primeFactors(i), primeFactors(number / i))
+      }   
+  }
 }
 
-console.log("Beginning at " + Date.now())
 correctAnswer = 6857;
-myAnswer = Math.max.apply(null, primeFactors(600851475143)); 
+myAnswer = primeFactors(600851475143)
 var helper = require('./helper')
 helper.printResult(myAnswer, correctAnswer);
-
 
