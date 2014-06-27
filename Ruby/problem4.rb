@@ -15,7 +15,9 @@ def findPalindromes(min, max)
     palindromes = products.select{ |i| i.to_s == i.to_s.reverse }
 end
 
+startTime = Time.now
 correctAnswer = 906609
 myAnswer = findPalindromes(100,999).max
-printResult(myAnswer, correctAnswer)
+endTime = Time.now
+printResultWithTimer(myAnswer, correctAnswer, startTime, endTime)
 

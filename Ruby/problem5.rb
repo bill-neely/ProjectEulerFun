@@ -7,13 +7,13 @@
 require_relative 'helper'
 
 def findDivisibleBy(range)
-    number = 1
+    number = 2
     stillLooking = true
     while stillLooking
         stillLooking = false
         range.each { |i| 
             if number % i != 0
-                number += 1
+                number += 2
                 stillLooking = true
                 break
             end  

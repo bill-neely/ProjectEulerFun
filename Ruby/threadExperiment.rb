@@ -15,13 +15,13 @@ def primeFactors(number)
     }
 end
 
-limit = 1000
+limit = 100
 puts "Creating #{limit} threads"
 threads = []
 limit.times do |i|
-    puts "spawn #{i}"
+    #puts "spawn #{i}"
     threads << Thread.new {
-        sleep((rand(0) * 60).to_i)
+        #sleep((rand(0) * 60).to_i)
         number = (rand(0) * 100000000000).to_i
         result = "Thread#{i} : PrimeFactors(#{number} = #{primeFactors(number)}."
         #puts result
