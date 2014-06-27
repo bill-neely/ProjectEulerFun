@@ -1,4 +1,4 @@
-# Factorial DIgit Sum
+# Factorial Digit Sum
 
 # n! means n * (n-1) * ... * 3 * 2 * 1
 # for example 10! = 10 * 9 * 8 * ... * 2 * 1 = 3628800
