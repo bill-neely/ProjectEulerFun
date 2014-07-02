@@ -1,0 +1,9 @@
+gem install rpsec
+
+manual steps install order - download gem files first 
+diff-lcs
+rpsec-support
+rspec-core
+rspec-expectations
+rspec-mocks
+rspec

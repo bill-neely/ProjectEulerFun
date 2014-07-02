@@ -14,17 +14,25 @@ require_relative('helper')
 
 class Integer
     def inWords
-        "one"
+    	return "one" if self == 1
+    	return "two" if self == 2
+    	return "three" if self == 3
+    	return "four" if self == 4
+    	return "five" if self == 5
+    	return "six" if self == 6
+    	return "seven" if self == 7
+    	return "eight" if self == 8
+    	return "nine" if self == 9
     end
 end
 
 
-startTime = Time.now
+#startTime = Time.now
 
-correctAnswer = 21124
-correctAnswer = "three thousand three hundred and forty-two"
-myAnswer = 3342.inWords
+#correctAnswer = 21124
+#correctAnswer = "three thousand three hundred and forty-two"
+#myAnswer = 3342.inWords
 
-endTime = Time.now
+#endTime = Time.now
 
-printResultWithTimer(myAnswer, correctAnswer, startTime, endTime)
+#printResultWithTimer(myAnswer, correctAnswer, startTime, endTime)
