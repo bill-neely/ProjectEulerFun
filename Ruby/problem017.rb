@@ -18,9 +18,22 @@ require('net/http')
 class Integer
     def inWords
     	url = "http://www.dataaccess.com/webservicesserver/numberconversion.wso/NumberToWords/JSON?ubiNum=#{self}"
- 		resp = Net::HTTP.get_response(URI.parse(url)) # get_response takes an URI object
-		return resp.body
-    	#return toEnglish(self)
+		proxy_addr = '72.37.249.115'
+		proxy_port = 8080
+		#service = Net::HTTP.new("http://www.dataaccess.com/webservicesserver/numberconversion.wso/NumberToWords/JSON?ubiNum=#{self}",
+		#				nil, proxy_addr, proxy_port)
+		#return service.get
+		proxy = Net::HTTP::Proxy(proxy_addr, proxy_port)
+		proxy.start(url) { |http|
+			puts http.methods
+		}
+		#Net::HTTP.new(url, nil, proxy_addr, proxy_port).start { |http|
+  				# always proxy via your.proxy.addr:8080
+  		#	resp = http.get(URI.parse(url))
+  		#	puts resp.methods
+		#}    	
+ 		#resp = Net::HTTP.get_response(URI.parse(url)) # get_response takes an URI object
+		#return resp.body
     end
 end
 
@@ -55,6 +68,7 @@ def toEnglish (number)
 end
 
 
+(99..99).each{ |i| puts i.inWords }
 #puts "starting call"
 #puts 23.inWords
 #puts "finished call"
