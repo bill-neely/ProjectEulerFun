@@ -13,13 +13,12 @@
 require_relative('helper')
 require('net/http')
 
-ENV['http_proxy'] = 'http://72.37.249.115:8080'
+#ENV['http_proxy'] = 'http://72.37.249.115:8080'
 
 class Integer
     def inWords
     	url = "http://www.dataaccess.com/webservicesserver/numberconversion.wso/NumberToWords/JSON?ubiNum=#{self}"
-    	puts Net::HTTP
-		resp = Net::HTTP.get_response(URI.parse(url)) # get_response takes an URI object
+ 		resp = Net::HTTP.get_response(URI.parse(url)) # get_response takes an URI object
 		return resp.body
     	#return toEnglish(self)
     end
@@ -56,9 +55,9 @@ def toEnglish (number)
 end
 
 
-puts "starting call"
-puts 23.inWords
-puts "finished call"
+#puts "starting call"
+#puts 23.inWords
+#puts "finished call"
 #startTime = Time.now
 
 #correctAnswer = 21124
