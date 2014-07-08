@@ -2,6 +2,10 @@ def time_diff_in_seconds(start, finish)
    '%.2f' % (finish - start) 
 end
 
+def number_with_commas(number)
+	number.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
+end
+
 def printResult(myAnswer, correctAnswer)
 	puts
 	if myAnswer == correctAnswer
