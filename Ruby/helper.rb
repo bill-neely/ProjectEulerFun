@@ -2,6 +2,10 @@ def time_diff_in_seconds(start, finish)
    '%.2f' % (finish - start) 
 end
 
+def time_diff_in_milliseconds(start, finish)
+   '%.2f' % ((finish - start) * 1000)  
+end
+
 def printResult(myAnswer, correctAnswer)
 	puts
 	if myAnswer == correctAnswer
