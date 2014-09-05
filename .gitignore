@@ -1,5 +1,5 @@
 # ignore c9.io folders
-.c9/*
+.c9/
 
 # default .gitignore for Ruby projects
  
