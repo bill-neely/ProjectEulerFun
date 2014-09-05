@@ -20,7 +20,7 @@ def pascal(row_num)
   pascal_calc(row_num - 1)
 end
 
-rows = 1000
+rows = 10000
 startTime = Time.now
 theRow = pascal(rows)
 endTime = Time.now
